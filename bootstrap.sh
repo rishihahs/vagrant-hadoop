@@ -36,3 +36,11 @@ sudo -u vagrant /usr/local/hadoop/bin/hadoop namenode -format
 
 # Start Hadoop
 sudo -u vagrant /usr/local/hadoop/bin/start-all.sh
+
+# Install Maven
+cd /usr/local
+sudo wget http://mirrors.sonic.net/apache/maven/maven-3/3.3.1/binaries/apache-maven-3.3.1-bin.tar.gz
+sudo tar xzf apache-maven-3.3.1-bin.tar.gz
+sudo mv apache-maven-3.3.1 apache-maven
+sudo chown -R vagrant:vagrant apache-maven
+sudo -u vagrant echo 'export PATH=$PATH:/usr/local/apache-maven/bin' >> /home/vagrant/.bashrc
